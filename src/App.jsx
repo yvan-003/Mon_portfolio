@@ -78,7 +78,7 @@ const softSkills = [
 const metrics = [
   { label: 'Projets data', value: '5+' },
   { label: 'Outils visualisation / Data', value: '10+' },
-  { label: 'Certif en cours', value: 'PL-300' },
+  { label: 'Certif en preparation', value: 'PL-300' },
 ]
 
 const SKILLS_PREVIEW_COUNT = 8
@@ -101,7 +101,7 @@ const copy = {
     heroImpact: '// Analyse, visualisation et aide a la decision.',
     heroExplore: 'Explorer les projets',
     heroCv: 'Telecharger mon CV',
-    metrics: ['Projets data', 'Outils visualisation / Data', 'Certif en cours'],
+    metrics: ['Projets data', 'Outils visualisation / Data', 'Certif en preparation'],
     brandRole: 'Data Analyst Junior - BI & Data Science',
     openTo: 'Stage • Projet • Contrat junior',
     about: {
@@ -129,7 +129,7 @@ const copy = {
       eyebrow: 'Parcours',
       title: 'Formation, experience, certification',
       lead:
-        'Un parcours oriente data, avec des projets academiques concrets et une certification BI en cours.',
+        'Un parcours oriente data, avec des projets academiques concrets et une certification BI en cours de preparation.',
     },
     projects: {
       eyebrow: 'Projets',
@@ -153,7 +153,7 @@ const copy = {
     profile: {
       title: 'Data Analyst (junior)',
       focus: 'BI / Data Science',
-      status: 'Certif PL-300 en cours',
+      status: 'Certif PL-300 en cours de preparation',
     },
   },
   en: {
@@ -164,7 +164,7 @@ const copy = {
     heroImpact: '// Analysis, visualization, and decision support.',
     heroExplore: 'Explore projects',
     heroCv: 'Download my CV',
-    metrics: ['Data projects', 'BI / Data tools', 'Certification'],
+    metrics: ['Data projects', 'BI / Data tools', 'Certification in preparation'],
     brandRole: 'Junior Data Analyst - BI & Data Science',
     openTo: 'Internship • Project • Junior role',
     about: {
@@ -192,7 +192,7 @@ const copy = {
       eyebrow: 'Background',
       title: 'Education, experience, certification',
       lead:
-        'A data-focused path with academic projects and a BI certification in progress.',
+        'A data-focused path with academic projects and a BI certification in preparation.',
     },
     projects: {
       eyebrow: 'Projects',
@@ -217,7 +217,7 @@ const copy = {
     profile: {
       title: 'Data Analyst (junior)',
       focus: 'BI / Data Science',
-      status: 'PL-300 certification in progress',
+      status: 'PL-300 certification in preparation',
     },
   },
 }
@@ -225,6 +225,7 @@ const copy = {
 function App() {
   const [lang, setLang] = useState('fr')
   const [skillsExpanded, setSkillsExpanded] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const t = copy[lang]
   const currentYear = new Date().getFullYear()
   const assetBase = import.meta.env.BASE_URL
@@ -266,21 +267,30 @@ function App() {
         <span />
         <span />
       </div>
-      <header className="sidebar">
+      <header className={`sidebar${menuOpen ? ' is-open' : ''}`}>
         <div className="brand">
           <span className="brand-mark" aria-hidden="true" />
           <div>
             <p className="brand-name">{personal.name}</p>
             <p className="brand-role">{t.brandRole}</p>
           </div>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
         <nav className="nav">
-          <a href="#home">{t.nav[0]}</a>
-          <a href="#about">{t.nav[1]}</a>
-          <a href="#skills">{t.nav[2]}</a>
-          <a href="#parcours">{t.nav[3]}</a>
-          <a href="#projects">{t.nav[4]}</a>
-          <a href="#contact">{t.nav[5]}</a>
+          <a href="#home" onClick={() => setMenuOpen(false)}>{t.nav[0]}</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>{t.nav[1]}</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>{t.nav[2]}</a>
+          <a href="#parcours" onClick={() => setMenuOpen(false)}>{t.nav[3]}</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>{t.nav[4]}</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav[5]}</a>
         </nav>
         <div className="sidebar-actions">
           <button
@@ -501,7 +511,7 @@ function App() {
             </div>
             <div className="about-card">
               <h3>Certification</h3>
-              <p>Microsoft Power BI PL-300 (en cours).</p>
+              <p>Microsoft Power BI PL-300 (en cours de preparation).</p>
               <p>Modelisation des donnees, DAX (bases).</p>
             </div>
           </div>

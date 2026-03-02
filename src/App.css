@@ -37,6 +37,18 @@
   align-items: center;
 }
 
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  border: 1px solid var(--stroke);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .brand-mark {
   width: 12px;
   height: 28px;
@@ -735,17 +747,40 @@ main {
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 20px 24px;
     border-right: none;
     border-bottom: 1px solid var(--stroke);
   }
 
+  .brand {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .nav {
-    flex-direction: row;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 2px 0;
+  }
+
+  .sidebar.is-open .nav {
+    display: flex;
+  }
+
+  .sidebar-actions {
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
-    gap: 12px 18px;
+    gap: 10px;
+    margin-top: 8px;
   }
 
   main {
@@ -775,8 +810,25 @@ main {
 }
 
 @media (max-width: 720px) {
+  .hero-metrics,
+  .about-grid,
+  .contact-card,
   .project-track {
-    grid-auto-columns: minmax(220px, 82%);
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 84%);
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+  }
+
+  .metric-card,
+  .about-card,
+  .contact-box,
+  .project-card {
+    scroll-snap-align: start;
   }
 }
 
