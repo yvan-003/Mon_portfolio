@@ -227,6 +227,7 @@ function App() {
   const [skillsExpanded, setSkillsExpanded] = useState(false)
   const t = copy[lang]
   const currentYear = new Date().getFullYear()
+  const assetBase = import.meta.env.BASE_URL
   const visibleSkills = skillsExpanded ? skills : skills.slice(0, SKILLS_PREVIEW_COUNT)
   const hiddenSkillsCount = Math.max(skills.length - SKILLS_PREVIEW_COUNT, 0)
   useEffect(() => {
@@ -310,7 +311,7 @@ function App() {
               <a className="cta" href="#projects">
                 {t.heroExplore}
               </a>
-              <a className="cta ghost" href="/cv.pdf">
+              <a className="cta ghost" href={`${assetBase}cv.pdf`}>
                 {t.heroCv}
               </a>
               <a
@@ -340,7 +341,7 @@ function App() {
           <div className="hero-visual reveal" style={{ '--delay': '0.2s' }}>
             <div className="profile-card stacked">
               <div className="profile-photo xl">
-                <img src="/IMG_0141.jpg" alt="Photo de profil" />
+                <img src={`${assetBase}IMG_0141.jpg`} alt="Photo de profil" />
               </div>
               <div className="profile-info-box code-card">
                 <p className="code-line">
