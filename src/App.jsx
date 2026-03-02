@@ -3,55 +3,67 @@ import { useEffect, useState } from 'react'
 
 const projects = [
   {
-    title: 'Detection de fraude',
-    type: 'Machine Learning',
-    tag: 'Python • Classification • Feature engineering',
-    link: 'https://github.com/yvan-003',
-    description:
-      "Analyse exploratoire de transactions financieres, nettoyage, gestion du desequilibre de classes et entrainement de modeles pour detecter les comportements suspects.",
-  },
-  {
     title: 'DeciChurn',
     type: 'Data App',
-    tag: 'Streamlit • KPI • Prediction',
-    link: 'https://github.com/yvan-003',
+    tag: 'Streamlit • Logistic Regression • KPI',
+    link: 'https://github.com/yvan-003/DeciChurn',
     description:
-      "Application d'aide a la decision pour la retention client : EDA, preparation des donnees, modelisation et tableaux de bord pour suivre le churn.",
+      "Application Streamlit d'aide a la decision pour la retention client avec suivi KPI, segmentation metier, prediction du churn et optimisation de seuil/couts.",
   },
   {
-    title: 'Dashboard circulation',
+    title: 'Fraudwatch',
+    type: 'ML Web App',
+    tag: 'Flask • Bootstrap • Logistic Regression',
+    link: 'https://github.com/yvan-003/FRAUDWATCH',
+    description:
+      "Application Flask pour explorer des transactions, suivre des indicateurs de fraude, filtrer les donnees et estimer le risque en simulation via un modele de classification.",
+  },
+  {
+    title: 'Stage Projet 2 (en cours)',
     type: 'BI Dashboard',
-    tag: 'Power BI • Tableau • Reporting',
-    link: 'https://github.com/yvan-003',
+    tag: 'Power BI • Python • Geospatial Join',
+    link: 'https://github.com/yvan-003/stage_projet2',
     description:
-      "Tableau de bord interactif a partir de donnees de circulation pour suivre les indicateurs et faciliter la prise de decision.",
+      "Projet en cours: analyse de circulation et collisions routieres avec preparation de tables analytiques et exports Power BI pour identifier zones/periodes critiques et soutenir le storytelling data.",
   },
   {
-    title: 'SIEM Wazuh (Syslog)',
+    title: 'Web Application INF349',
+    type: 'Full Stack / API',
+    tag: 'Flask • REST API • SQLite',
+    link: 'https://github.com/yvan-003/Web_application',
+    description:
+      "Projet academique en equipe: API de prise de commandes avec persistance locale, logique metier (taxes/livraison), paiement distant et tests automatises.",
+  },
+  {
+    title: 'SIEM Wazuh (Collab Desjardins)',
     type: 'Cybersecurity / SIEM',
     tag: 'Wazuh • Syslog • Detection',
-    link: 'https://github.com/yvan-003',
+    link: '',
+    privateRepo: true,
     description:
-      "Implementation d'un SIEM avec Wazuh et Syslog, en collaboration avec Desjardins, pour centraliser les logs et ameliorer la detection d'incidents.",
+      "Implementation d'un SIEM avec Wazuh et Syslog pour centraliser les logs et renforcer la detection d'incidents. Projet de collaboration (depot non public).",
   },
   
 ]
 
 const skills = [
   'Power BI (DAX)',
-  'Tableau',
-  'RStudio (tidyverse)',
-  'Jupyter Notebook',
-  'Python (Pandas)',
+  'Python (Pandas, scikit-learn)',
   'SQL',
   'Streamlit',
+  'Flask',
+  'REST API',
+  'SQLite',
+  'Peewee ORM',
+  'Pytest',
+  'Bootstrap',
+  'Jupyter Notebook',
+  'RStudio',
   'Data Cleaning',
+  'EDA',
   'KPI & Reporting',
-  'Data prep',
   'Data Storytelling',
-  'Visualisation',
-  'GitHub',
-  'HTML / CSS / JS',
+  'Git / GitHub',
 ]
 
 const softSkills = [
@@ -64,26 +76,39 @@ const softSkills = [
 ]
 
 const metrics = [
-  { label: 'Projets data', value: '4+' },
-  { label: 'Outils visualisaion / Data', value: '10+' },
+  { label: 'Projets data', value: '5+' },
+  { label: 'Outils visualisation / Data', value: '10+' },
   { label: 'Certif en cours', value: 'PL-300' },
 ]
+
+const SKILLS_PREVIEW_COUNT = 8
+
+const personal = {
+  name: 'Paul Yvan Seka',
+  email: 'yvannseka@icloud.com',
+  phone: '+1 (514) 757-3056',
+  github: 'https://github.com/yvan-003',
+  linkedin: 'https://www.linkedin.com/in/paul-yvan-seka-543847322',
+  location: 'Chicoutimi, QC, Canada',
+}
 
 const copy = {
   fr: {
     nav: ['Accueil', 'A propos', 'Competences', 'Parcours', 'Projets', 'Contact'],
-    eyebrow: 'BI / Data / IA / Data visualization',
-    heroTitle: 'Data Analyst Junior | BI & Data Science',
-    heroTools: '// Power BI, Tableau, Python, R, Jupyter, Streamlit.',
-    heroImpact: '// Je transforme des donnees brutes en insights actionnables.',
+    eyebrow: 'Data • BI • IA',
+    heroTitle: 'Etudiant en informatique (IA) | Data Analyst Junior',
+    heroTools: '// Python, R, SQL, Power BI, Streamlit, Tableau.',
+    heroImpact: '// Analyse, visualisation et aide a la decision.',
     heroExplore: 'Explorer les projets',
     heroCv: 'Telecharger mon CV',
-    metrics: ['Projets data', 'Outils visualisaion / Data', 'Certif en cours'],
+    metrics: ['Projets data', 'Outils visualisation / Data', 'Certif en cours'],
+    brandRole: 'Data Analyst Junior - BI & Data Science',
+    openTo: 'Stage • Projet • Contrat junior',
     about: {
       eyebrow: 'A propos',
-      title: 'Profil oriente impact',
+      title: 'Profil data & BI',
       lead:
-        "Etudiant en informatique oriente science des donnees et intelligence d'affaires. Experience en analyse, traitement et visualisation avec Python, R et SQL. Objectif : produire des analyses fiables et des dashboards clairs pour aider a la decision.",
+        "Etudiant en informatique specialise en science des donnees et intelligence d'affaires. J'interviens sur l'analyse, la visualisation et la restitution de resultats pour soutenir la prise de decision.",
       cards: ['Methodes claires', "Esprit d'analyse", 'Projets concrets'],
       texts: [
         'De la collecte au nettoyage, puis visualisation et restitution.',
@@ -93,10 +118,12 @@ const copy = {
     },
     skills: {
       eyebrow: 'Competences',
-      title: 'Axes de travail et expertise analytique',
+      title: 'Technologies deja mises en pratique',
       lead:
-        'Des competences structurees pour preparer la lecture des projets a venir et donner du contexte a la methode.',
+        "Outils et methodes deja utilises en cours et en projet. Je continue de progresser sur chaque stack.",
       soft: 'Qualites et methodes',
+      showMore: 'Voir plus',
+      showLess: 'Voir moins',
     },
     parcours: {
       eyebrow: 'Parcours',
@@ -109,16 +136,19 @@ const copy = {
       title: 'Projets selectionnes',
       lead:
         'Chaque projet decrit le contexte, la methode et le resultat. Le code complet est disponible sur GitHub.',
-      hint: 'Scroll horizontal ou swipe pour explorer.',
       link: 'Voir sur GitHub',
+      privateLink: 'Depot prive (sur demande)',
     },
     contact: {
       eyebrow: 'Contact',
       title: 'Pret a collaborer',
       lead:
-        "Discutons d'une mission data, d'un besoin BI ou d'un projet IA. Reponse rapide par email ou LinkedIn.",
+        "Discutons d'une mission data, d'un besoin BI ou d'un projet IA. Reponse rapide par email, telephone ou LinkedIn.",
       email: 'Adresse email',
+      phone: 'Telephone',
+      github: 'GitHub',
       linkedin: 'LinkedIn',
+      location: 'Localisation',
     },
     profile: {
       title: 'Data Analyst (junior)',
@@ -128,18 +158,20 @@ const copy = {
   },
   en: {
     nav: ['Home', 'About', 'Skills', 'Background', 'Projects', 'Contact'],
-    eyebrow: 'BI / Data / AI / Data visualization',
-    heroTitle: 'Junior Data Analyst | BI & Data Science',
-    heroTools: '// Power BI, Tableau, Python, R, Jupyter, Streamlit.',
-    heroImpact: '// I turn raw data into actionable insights.',
+    eyebrow: 'Data • BI • AI',
+    heroTitle: 'Computer Science Student (AI) | Junior Data Analyst',
+    heroTools: '// Python, R, SQL, Power BI, Streamlit, Tableau.',
+    heroImpact: '// Analysis, visualization, and decision support.',
     heroExplore: 'Explore projects',
     heroCv: 'Download my CV',
     metrics: ['Data projects', 'BI / Data tools', 'Certification'],
+    brandRole: 'Junior Data Analyst - BI & Data Science',
+    openTo: 'Internship • Project • Junior role',
     about: {
       eyebrow: 'About',
-      title: 'Impact-focused profile',
+      title: 'Data & BI profile',
       lead:
-        'Computer science student focused on data science and business intelligence. Experience in analysis, processing, and visualization with Python, R, and SQL. Goal: deliver reliable analyses and clear dashboards to support decisions.',
+        'Computer science student specialized in data science and business intelligence. I work on analysis, visualization, and clear reporting to support decision-making.',
       cards: ['Clear methods', 'Analytical mindset', 'Concrete projects'],
       texts: [
         'From collection to cleaning, then visualization and delivery.',
@@ -149,10 +181,12 @@ const copy = {
     },
     skills: {
       eyebrow: 'Skills',
-      title: 'Core skills and analytics expertise',
+      title: 'Technologies already practiced',
       lead:
-        'Structured skills to prepare the projects section and provide methodological context.',
+        'Tools and methods already used in coursework and projects. I am still improving across each stack.',
       soft: 'Qualities and methods',
+      showMore: 'Show more',
+      showLess: 'Show less',
     },
     parcours: {
       eyebrow: 'Background',
@@ -167,14 +201,18 @@ const copy = {
         'Each project outlines context, method, and outcome. Full code is available on GitHub.',
       hint: 'Horizontal scroll or swipe to explore.',
       link: 'View on GitHub',
+      privateLink: 'Private repository (on request)',
     },
     contact: {
       eyebrow: 'Contact',
       title: 'Ready to collaborate',
       lead:
-        'Let’s discuss a data mission, BI need, or AI project. Fast response by email or LinkedIn.',
+        'Let’s discuss a data mission, BI need, or AI project. Fast response by email, phone, or LinkedIn.',
       email: 'Email',
+      phone: 'Phone',
+      github: 'GitHub',
       linkedin: 'LinkedIn',
+      location: 'Location',
     },
     profile: {
       title: 'Data Analyst (junior)',
@@ -186,7 +224,11 @@ const copy = {
 
 function App() {
   const [lang, setLang] = useState('fr')
+  const [skillsExpanded, setSkillsExpanded] = useState(false)
   const t = copy[lang]
+  const currentYear = new Date().getFullYear()
+  const visibleSkills = skillsExpanded ? skills : skills.slice(0, SKILLS_PREVIEW_COUNT)
+  const hiddenSkillsCount = Math.max(skills.length - SKILLS_PREVIEW_COUNT, 0)
   useEffect(() => {
     const cards = document.querySelectorAll('.project-card')
     if (!cards.length) return
@@ -227,8 +269,8 @@ function App() {
         <div className="brand">
           <span className="brand-mark" aria-hidden="true" />
           <div>
-            <p className="brand-name">Portfolio </p>
-            <p className="brand-role">Analyste de donnees / Data Analyst</p>
+            <p className="brand-name">{personal.name}</p>
+            <p className="brand-role">{t.brandRole}</p>
           </div>
         </div>
         <nav className="nav">
@@ -245,7 +287,7 @@ function App() {
             type="button"
             onClick={() => setLang((prev) => (prev === 'fr' ? 'en' : 'fr'))}
           >
-            {lang === 'fr' ? 'FR' : 'EN'}
+            {lang === 'fr' ? 'EN' : 'FR'}
           </button>
           <a className="cta ghost" href="#contact">
             {t.nav[5]}
@@ -287,7 +329,7 @@ function App() {
                   <p className="metric-label">
                     {metric.label === 'Projets data'
                       ? t.metrics[0]
-                      : metric.label === 'Outils visualisaion / Data'
+                      : metric.label === 'Outils visualisation / Data'
                       ? t.metrics[1]
                       : t.metrics[2]}
                   </p>
@@ -307,7 +349,7 @@ function App() {
                 </p>
                 <p className="code-line">
                   <span className="tok-prop">nom</span>:{' '}
-                  <span className="tok-string">'Paul Yvan Seka'</span>,
+                  <span className="tok-string">'{personal.name}'</span>,
                 </p>
                 <p className="code-line">
                   <span className="tok-prop">titre</span>:{' '}
@@ -323,7 +365,7 @@ function App() {
                 </p>
                 <p className="code-line">
                   <span className="tok-prop">ouvert</span>:{' '}
-                  <span className="tok-string">'Stage|travail|projet'</span>,
+                  <span className="tok-string">'{t.openTo}'</span>,
                 </p>
                 <p className="code-line">{'}'}</p>
               </div>
@@ -402,12 +444,21 @@ function App() {
             <p className="section-lead">{t.skills.lead}</p>
           </div>
           <div className="skills-grid">
-            {skills.map((skill) => (
+            {visibleSkills.map((skill) => (
               <span className="skill-pill" key={skill}>
                 {skill}
               </span>
             ))}
           </div>
+          {hiddenSkillsCount > 0 ? (
+            <button
+              className="skill-toggle"
+              type="button"
+              onClick={() => setSkillsExpanded((prev) => !prev)}
+            >
+              {skillsExpanded ? t.skills.showLess : `${t.skills.showMore} (+${hiddenSkillsCount})`}
+            </button>
+          ) : null}
           <p className="section-subtitle">{t.skills.soft}</p>
           <div className="skills-grid">
             {softSkills.map((skill) => (
@@ -493,19 +544,23 @@ function App() {
                 <div className="project-details">
                   <p>{project.description}</p>
                 </div>
-                <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-                  <span>{t.projects.link}</span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M7 17l10-10M10 7h7v7"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
+                {project.privateRepo ? (
+                  <span className="project-link project-link-disabled">{t.projects.privateLink}</span>
+                ) : (
+                  <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                    <span>{t.projects.link}</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M7 17l10-10M10 7h7v7"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -541,7 +596,27 @@ function App() {
                 {t.contact.email}
               </p>
               <p className="contact-value">
-                <a href="mailto:yvannseka@icloud.com">yvannseka@icloud.com</a>
+                <a href={`mailto:${personal.email}`}>{personal.email}</a>
+              </p>
+            </div>
+            <div className="contact-box">
+              <p className="contact-title">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M5 4h4l2 5-2 2a12 12 0 0 0 4 4l2-2 5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                {t.contact.phone}
+              </p>
+              <p className="contact-value">
+                <a href="tel:+15147573056">{personal.phone}</a>
               </p>
             </div>
             <div className="contact-box">
@@ -561,12 +636,43 @@ function App() {
                 {t.contact.linkedin}
               </p>
               <p className="contact-value">
-                <a
-                  href="https://www.linkedin.com/in/paul-yvan-seka-543847322"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={personal.linkedin} target="_blank" rel="noreferrer">
                   www.linkedin.com/in/paul-yvan-seka-543847322
+                </a>
+              </p>
+            </div>
+            <div className="contact-box">
+              <p className="contact-title">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8 2 5 5 5 9c0 5 7 12 7 12s7-7 7-12c0-4-3-7-7-7z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </span>
+                {t.contact.location}
+              </p>
+              <p className="contact-value">{personal.location}</p>
+            </div>
+            <div className="contact-box">
+              <p className="contact-title">
+                <span className="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5.1 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1.1a9.8 9.8 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.4.1 2.7.7.8 1.1 1.7 1.1 2.8 0 4-2.4 4.9-4.7 5.1.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.4 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                {t.contact.github}
+              </p>
+              <p className="contact-value">
+                <a href={personal.github} target="_blank" rel="noreferrer">
+                  github.com/yvan-003
                 </a>
               </p>
             </div>
@@ -574,7 +680,10 @@ function App() {
         </section>
       </main>
       <footer className="footer">
-        <p>Portfolio —  GitHub Pages.</p>
+        <p>
+          © {currentYear} {personal.name} — Portfolio GitHub Pages.{' '}
+          {lang === 'fr' ? 'Tous droits reserves.' : 'All rights reserved.'}
+        </p>
       </footer>
     </div>
   )
