@@ -1,0 +1,19 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0A3A59"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="70" y="90" width="1140" height="540" rx="22" fill="#101D33" stroke="#2D4768"/>
+  <rect x="120" y="130" width="320" height="120" rx="14" fill="#163357"/>
+  <rect x="470" y="130" width="320" height="120" rx="14" fill="#1A406B"/>
+  <rect x="820" y="130" width="320" height="120" rx="14" fill="#215381"/>
+  <polyline points="150,500 320,430 460,455 620,360 770,390 920,300 1120,240" stroke="#4CC9F0" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="320" cy="430" r="10" fill="#4CC9F0"/>
+  <circle cx="620" cy="360" r="10" fill="#4CC9F0"/>
+  <circle cx="920" cy="300" r="10" fill="#4CC9F0"/>
+  <text x="130" y="205" fill="#7DD3FC" font-size="46" font-family="JetBrains Mono, monospace">CHURN KPI</text>
+  <text x="130" y="560" fill="#9FB3CD" font-size="34" font-family="JetBrains Mono, monospace">Dashboard preview</text>
+</svg>

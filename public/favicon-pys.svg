@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0a0f1a"/>
+  <rect x="7" y="7" width="50" height="50" rx="10" fill="#060d18" stroke="#0e1f35"/>
+  <text x="32" y="38" text-anchor="middle" fill="#00d4aa" font-size="17" font-weight="800" font-family="JetBrains Mono, monospace">PYS</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#0a0f1a"/>
+  <rect x="90" y="82" width="1100" height="556" rx="18" fill="#060d18" stroke="#0e1f35"/>
+  <rect x="136" y="132" width="1008" height="134" rx="12" fill="#081527" stroke="#0e1f35"/>
+  <rect x="136" y="308" width="468" height="260" rx="12" fill="#081527" stroke="#0e1f35"/>
+  <rect x="644" y="308" width="500" height="260" rx="12" fill="#081527" stroke="#0e1f35"/>
+  <circle cx="220" cy="440" r="54" fill="#00d4aa" opacity="0.18"/>
+  <circle cx="356" cy="392" r="42" fill="#3b82f6" opacity="0.22"/>
+  <circle cx="474" cy="462" r="64" fill="#00d4aa" opacity="0.12"/>
+  <path d="M220 440L356 392L474 462" stroke="#00d4aa" stroke-width="6" stroke-linecap="round"/>
+  <text x="174" y="210" fill="#00d4aa" font-size="40" font-family="JetBrains Mono, monospace">Apriori vs FP-Growth</text>
+  <text x="690" y="390" fill="#e2e8f0" font-size="34" font-family="JetBrains Mono, monospace">488 233 regles</text>
+  <text x="690" y="448" fill="#4a6080" font-size="30" font-family="JetBrains Mono, monospace">bank marketing</text>
+  <text x="690" y="506" fill="#3b82f6" font-size="30" font-family="JetBrains Mono, monospace">poutcome=success</text>
+</svg>

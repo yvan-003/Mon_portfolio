@@ -1,0 +1,18 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#0F5132"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1100" height="540" rx="22" fill="#101C2E" stroke="#2A5B4A"/>
+  <rect x="140" y="140" width="500" height="430" rx="14" fill="#15263D"/>
+  <rect x="680" y="140" width="460" height="170" rx="14" fill="#17324A"/>
+  <rect x="680" y="330" width="460" height="240" rx="14" fill="#173A4E"/>
+  <rect x="180" y="200" width="300" height="12" rx="6" fill="#6EE7B7"/>
+  <rect x="180" y="240" width="260" height="12" rx="6" fill="#6EE7B7"/>
+  <rect x="180" y="280" width="200" height="12" rx="6" fill="#6EE7B7"/>
+  <text x="700" y="220" fill="#A7F3D0" font-size="40" font-family="JetBrains Mono, monospace">REST API</text>
+  <text x="700" y="400" fill="#9FB3CD" font-size="34" font-family="JetBrains Mono, monospace">Full stack flow</text>
+</svg>

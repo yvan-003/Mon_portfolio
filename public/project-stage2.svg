@@ -1,0 +1,18 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F1B2E"/>
+      <stop offset="1" stop-color="#1E3A53"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1120" height="560" rx="22" fill="#10233E" stroke="#274D71"/>
+  <rect x="130" y="140" width="1020" height="180" rx="16" fill="#1B3457"/>
+  <rect x="130" y="350" width="490" height="230" rx="16" fill="#183254"/>
+  <rect x="660" y="350" width="490" height="230" rx="16" fill="#1A3A5D"/>
+  <path d="M190 250C250 210 390 210 450 250C510 290 650 290 710 250C770 210 910 210 970 250" stroke="#67E8F9" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="300" cy="450" r="84" fill="#264C73"/>
+  <circle cx="300" cy="450" r="56" fill="#67E8F9"/>
+  <path d="M770 530L860 460L940 500L1030 420" stroke="#60A5FA" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <text x="150" y="205" fill="#67E8F9" font-size="42" font-family="JetBrains Mono, monospace">Traffic & collisions</text>
+</svg>

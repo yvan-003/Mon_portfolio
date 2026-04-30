@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0F14"/>
+      <stop offset="1" stop-color="#123D5B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="72" y="74" width="1056" height="482" rx="26" fill="#111827" stroke="#27486A"/>
+  <text x="120" y="230" fill="#E6EAF2" font-size="66" font-family="Space Grotesk, sans-serif" font-weight="700">Paul Yvan Seka</text>
+  <text x="120" y="302" fill="#00d4aa" font-size="42" font-family="Space Grotesk, sans-serif" font-weight="600">Data Analyst Junior · Web Full Stack</text>
+  <text x="120" y="380" fill="#9AA4BF" font-size="34" font-family="JetBrains Mono, monospace">Python · SQL · Power BI · Flask · Streamlit</text>
+  <path d="M120 456H540" stroke="#4CC9F0" stroke-width="8" stroke-linecap="round"/>
+  <text x="120" y="520" fill="#9AA4BF" font-size="28" font-family="JetBrains Mono, monospace">paulyvanseka.com</text>
+</svg>

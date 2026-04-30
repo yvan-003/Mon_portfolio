@@ -1,41 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 :root {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --bg: #0a0f1a;
+  --surface: #060d18;
+  --border: #0e1f35;
+  --accent: #00d4aa;
+  --accent-blue: #3b82f6;
+  --text: #e2e8f0;
+  --text-soft: #94a3b8;
+  --muted: #4a6080;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body: 'Inter', 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
-  background-color: var(--bg);
+  background: var(--bg);
   font-synthesis: none;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --bg: #0b0f14;
-  --bg-deep: #0f1621;
-  --surface: #121826;
-  --surface-strong: #161d2d;
-  --text: #e6eaf2;
-  --muted: #9aa4bf;
-  --accent: #4cc9f0;
-  --accent-strong: #4895ef;
-  --accent-soft: rgba(76, 201, 240, 0.15);
-  --stroke: rgba(255, 255, 255, 0.08);
-  --shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
 }
 
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--bg);
+  margin: 0;
   color: var(--text);
+  background: var(--bg);
+  cursor: crosshair;
 }
 
 a {
@@ -43,11 +47,27 @@ a {
   text-decoration: none;
 }
 
+button,
+a {
+  cursor: crosshair;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+}
+
 img {
   max-width: 100%;
-  display: block;
 }
 
 #root {
   min-height: 100vh;
+}
+
+@media (max-width: 980px) {
+  html {
+    scroll-snap-type: none;
+  }
 }
