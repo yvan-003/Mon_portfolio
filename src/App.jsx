@@ -561,15 +561,35 @@ function App() {
       scrollToSection(navItems[nextIndex].id)
     }
 
+    const canScrollInsideActiveSection = (direction) => {
+      const activeElement = document.getElementById(activeSectionRef.current)
+      if (!activeElement || direction === 0) return false
+
+      const rect = activeElement.getBoundingClientRect()
+      const tolerance = 24
+
+      if (direction > 0) return rect.bottom > window.innerHeight + tolerance
+      return rect.top < -tolerance
+    }
+
     const onWheel = (event) => {
       if (window.innerWidth < CONTROLLED_SCROLL_MIN_WIDTH) return
-      event.preventDefault()
       if (transitionLockRef.current) return
+
+      const direction = Math.sign(event.deltaY)
+      if (direction === 0) return
+
+      if (canScrollInsideActiveSection(direction)) {
+        wheelAccumulatorRef.current = 0
+        return
+      }
+
+      event.preventDefault()
       wheelAccumulatorRef.current += event.deltaY
       if (Math.abs(wheelAccumulatorRef.current) < 45) return
-      const direction = wheelAccumulatorRef.current > 0 ? 1 : -1
+      const accumulatedDirection = wheelAccumulatorRef.current > 0 ? 1 : -1
       wheelAccumulatorRef.current = 0
-      goByDirection(direction)
+      goByDirection(accumulatedDirection)
     }
 
     const onKeyDown = (event) => {
@@ -577,9 +597,12 @@ function App() {
       const previousKeys = ['ArrowUp', 'PageUp']
 
       if (![...nextKeys, ...previousKeys].includes(event.key)) return
+      const direction = nextKeys.includes(event.key) ? 1 : -1
+      if (window.innerWidth >= CONTROLLED_SCROLL_MIN_WIDTH && canScrollInsideActiveSection(direction)) return
+
       event.preventDefault()
       if (transitionLockRef.current) return
-      goByDirection(nextKeys.includes(event.key) ? 1 : -1)
+      goByDirection(direction)
     }
 
     const onTouchStart = (event) => {
@@ -728,7 +751,9 @@ function App() {
           {sidebarCollapsed ? '>' : '<'}
         </button>
         <div className="sidebar-profile">
-          <div className="sidebar-avatar">{personal.initials}</div>
+          <div className="sidebar-avatar" aria-label="Logo Portfolio PYS">
+            <img src={`${assetBase}portfolio-pys-logo-square.png`} alt="" />
+          </div>
           <div>
             <p className="sidebar-name">{personal.name}</p>
             <p className="sidebar-title">{personal.title}</p>
@@ -794,7 +819,7 @@ function App() {
               >
                 Voir les projets
               </a>
-              <a className="button" href={`${assetBase}Paul_Yvan_Seka_CV_2026.pdf`}>
+              <a className="button" href={`${assetBase}Paul_Yvan_Seka_CV_Professionnel_Canada_2026.pdf`}>
                 Telecharger mon CV
               </a>
             </div>
@@ -945,6 +970,11 @@ function App() {
           </div>
 
           <div className="timeline">
+            <div>
+              <span>2020 - 2023</span>
+              <h3>Baccalaureat en ingenierie logicielle</h3>
+              <p>Formation a Abidjan : programmation, bases de donnees, algorithmique et bases du developpement logiciel.</p>
+            </div>
             <div>
               <span>2023 - 2026</span>
               <h3>Baccalaureat en informatique</h3>

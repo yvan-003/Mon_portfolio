@@ -96,12 +96,17 @@
   width: 38px;
   height: 38px;
   place-items: center;
-  color: #061016;
-  background: var(--accent);
+  overflow: hidden;
+  background: #020812;
+  border: 1px solid rgba(0, 212, 170, 0.45);
   border-radius: 50%;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 800;
+  box-shadow: 0 0 22px rgba(0, 212, 170, 0.14);
+}
+
+.sidebar-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sidebar-name,
